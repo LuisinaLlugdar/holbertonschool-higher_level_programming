@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-3-square.py:
+4-square.py:
 Class Square that defines a square
 """
 
@@ -14,12 +14,32 @@ class Square:
         Initialize square
 
         Attributes:
-            size: private attribute size of square
+            size: attribute size of square
         """
-        self.__size = size
-        if type(size) is not int:
+        self.size = size
+
+    @property
+    def size(self):
+        """
+        Getter
+
+        Return:
+            size of square
+        """
+        return self.__size
+
+    @size.setter
+    def size(self, value):
+        """
+        Setter
+
+        Attributes:
+            value: the new size
+        """
+        self.__size = value
+        if type(value) is not int:
             raise TypeError("size must be an integer")
-        if size < 0:
+        if value < 0:
             raise ValueError("size must be >= 0")
 
     def area(self):
