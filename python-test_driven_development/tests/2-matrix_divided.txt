@@ -14,6 +14,14 @@ Positive and ints and floats, same size lists in matrix:
      >>> matrix_divided(matrix, 2.5)
      [[0.8, -1.68, 2.4], [-3.2, 4.2, 4.8]]
 
+     >>> matrix = [[True], [False]]
+     >>> matrix_divided(matrix, True)
+     [[1.0], [0.0]]
+
+     >>> matrix = [[], []]
+     >>> matrix_divided(matrix, 3)
+     [[], []]
+
 FAILURE CASES:
 Empty matrix:
      >>> matrix_divided(None, 3)
@@ -48,7 +56,13 @@ Matrix with wrong data types:
      ...
      TypeError: matrix must be a matrix (list of lists) of integers/floats
 
-     >>> matrix = [[2, 4.2, 6], [{"key" : 98}]]
+     >>> matrix = [[2, 4.2, 6], [{"key1" : 98}]]
+     >>> matrix_divided(matrix, 3)
+     Traceback (most recent call last):
+     ...
+     TypeError: Each row of the matrix must have the same size
+
+     >>> matrix = [[2, 4.2, 6], [{"key1" : 98}, {"key2" : 94}, {"key3" : 348}]]
      >>> matrix_divided(matrix, 3)
      Traceback (most recent call last):
      ...
@@ -99,9 +113,15 @@ Missing matrix:
      ...
      TypeError: matrix_divided() missing 1 required positional argument: 'div'
 
-div as 0 or wrong type:
+div as 0, boolean = False or wrong type:
      >>> matrix = [[2, 4.2, 6], [8, 10.5, 12]]
      >>> matrix_divided(matrix, 0)
+     Traceback (most recent call last):
+     ...
+     ZeroDivisionError: division by zero
+
+     >>> matrix = [[True], [False]]
+     >>> matrix_divided(matrix, False)
      Traceback (most recent call last):
      ...
      ZeroDivisionError: division by zero
