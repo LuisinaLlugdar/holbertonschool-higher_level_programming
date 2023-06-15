@@ -1,0 +1,50 @@
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+SUCCESS CASES:
+Two strings given:
+    >>> say_my_name("Harry", "Potter")
+    My name is Harry Potter
+
+One string given:
+    >>> say_my_name("Ron")
+    My name is Ron 
+
+FAILURE CASES:
+Wrong data types:
+    >>> say_my_name(14, "August")
+    Traceback (most recent call last):
+    ...
+    TypeError: first_name must be a string
+
+    >>> say_my_name("August", 14)
+    Traceback (most recent call last):
+    ...
+    TypeError: last_name must be a string
+
+    >>> say_my_name("August", ["September", "October"])
+    Traceback (most recent call last):
+    ...
+    TypeError: last_name must be a string
+
+    >>> say_my_name(["September", "October"], "August")
+    Traceback (most recent call last):
+    ...
+    TypeError: first_name must be a string
+
+Extra args:
+    >>> say_my_name("August", "September", "October")
+    Traceback (most recent call last):
+    ...
+    TypeError: say_my_name() takes from 1 to 2 positional arguments but 3 were given
+
+Without args:
+    >>> say_my_name()
+    Traceback (most recent call last):
+    ...
+    TypeError: say_my_name() missing 1 required positional argument: 'first_name'
+
+With None as arg:
+    >>> say_my_name(None)
+    Traceback (most recent call last):
+    ...
+    TypeError: first_name must be a string
