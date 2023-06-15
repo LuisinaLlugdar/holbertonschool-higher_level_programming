@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
 Module 4-print_square
+Method that prints a square with #
 """
 
 
