@@ -93,8 +93,12 @@ class Rectangle:
         result = ""
         if self.__width == 0 or self.__height == 0:
             return ""
+        """
         for i in range(self.__height):
             for j in range(self.__width):
                 result += "#"
             result += "\n"
+        return result
+        """
+        result = "\n".join(["#" * self.__width for rows in range(self.__height)])
         return result
