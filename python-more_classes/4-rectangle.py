@@ -103,7 +103,6 @@ class Rectangle:
         resu = "\n".join(["#" * self.__width for rows in range(self.__height)])
         return resu
 
-
     def __repr__(self):
         """
         Recreate new instance with string
