@@ -90,7 +90,7 @@ class Rectangle:
             or an empty string otherwise
         """
 
-        result = ""
+        resu = ""
         if self.__width == 0 or self.__height == 0:
             return ""
         """
@@ -100,5 +100,5 @@ class Rectangle:
             result += "\n"
         return result
         """
-        result = "\n".join(["#" * self.__width for rows in range(self.__height)])
-        return result
+        resu = "\n".join(["#" * self.__width for rows in range(self.__height)])
+        return resu
