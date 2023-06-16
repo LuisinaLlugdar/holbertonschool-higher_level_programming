@@ -1,0 +1,41 @@
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+SUCCESS CASES:
+Test string:
+     >>> text_indentation("""Lorem ipsum dolor sit amet, consectetur adipiscing elit. \
+     ... Quonam modo? Utrum igitur tibi litteram videor an totas paginas commovere? \
+     ... Non autem hoc: igitur ne illud quidem. Fortasse id optimum, sed ubi illud""")
+     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+     
+     Quonam modo?
+     
+     Utrum igitur tibi litteram videor an totas paginas commovere?
+     
+     Non autem hoc:
+     
+     igitur ne illud quidem.
+     
+     Fortasse id optimum, sed ubi illud
+
+FAILURE CASES:
+Test other data types:
+     >>> text_indentation(-1)
+     Traceback (most recent call last):
+     ...
+     TypeError: text must be a string
+
+     >>> text_indentation(["Hello, I study at Holberton School"])
+     Traceback (most recent call last):
+     ...
+     TypeError: text must be a string
+
+     >>> text_indentation({"Hello", "Holberton", "School"})
+     Traceback (most recent call last):
+     ...
+     TypeError: text must be a string
+
+More than one argument given:
+     >>> text_indentation("Hello I'm studying", "and learning Python")
+      Traceback (most recent call last):
+     ...
+     TypeError: text_indentation() takes 1 positional argument but 2 were given
