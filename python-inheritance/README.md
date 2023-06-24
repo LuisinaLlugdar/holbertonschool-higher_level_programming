@@ -59,3 +59,5 @@ size must be private. No getter or setter
 size must be a positive integer, validated by integer_validator
 the area() method must be implemented
 print() should print, and str() should return, the square description: [Square] <width>/<height>
+
+The last task consisted on creating a blog explaining the stuff treated in this project. If you like, you can check mine here: https://www.linkedin.com/posts/luisina-llugdar-2b304a280_a-brief-post-of-mutable-and-immutable-objects-activity-7077783360856621056-_S-f?utm_source=share&utm_medium=member_desktop
