@@ -47,6 +47,4 @@ class Student:
         Args:
             json: will always be a dictionary
         """
-        self.first_name = json.get("first_name")
-        self.last_name = json.get("last_name")
-        self.age = json.get("age")
+        self.__dict__.update(json)
