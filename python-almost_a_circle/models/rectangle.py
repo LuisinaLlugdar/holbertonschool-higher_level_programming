@@ -33,6 +33,7 @@ class Rectangle(Base):
 
         Methods:
             area: returns the area of the object rectangle
+            display: prints in stdo the rectangle using '#'
         """
         super().__init__(id)
         self.width = width
@@ -133,3 +134,12 @@ class Rectangle(Base):
         method to return the area of the rectangle
         """
         return self.__width * self.__height
+
+    def display(self):
+        """
+        method that prints in stdout the rectangle with the character #
+        """
+        for i in range(self.__height):
+            for j in range(self.__width):
+                print("#", end='')
+            print()
