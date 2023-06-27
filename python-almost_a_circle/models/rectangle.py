@@ -139,7 +139,11 @@ class Rectangle(Base):
         """
         method that prints in stdout the rectangle with the character #
         """
+        for a in range(self.y):
+            print()
         for i in range(self.__height):
+            for b in range(self.x):
+                print(" ", end='')
             for j in range(self.__width):
                 print("#", end='')
             print()
