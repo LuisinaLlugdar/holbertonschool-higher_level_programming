@@ -63,5 +63,9 @@ class TestRectangleClass(unittest.TestCase):
         r6 = Rectangle(8, 7, 0, 0, 12)
         self.assertEqual(r6.area(), 56)
 
+    def test_str_format(self):
+        r7 = Rectangle(1, 2, 3, 4, 5)
+        self.assertEqual(r7.__str__(), "[Rectangle] (5) 3/4 - 1/2")
+
     if __name__ == '__main__':
         unittest.main()
