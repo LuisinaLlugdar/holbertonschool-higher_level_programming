@@ -30,6 +30,9 @@ class Rectangle(Base):
             x
             y
             id - comes from the Super Class Base
+
+        Methods:
+            area: returns the area of the object rectangle
         """
         super().__init__(id)
         self.width = width
@@ -124,3 +127,9 @@ class Rectangle(Base):
             raise TypeError("y must be an integer")
         if y < 0:
             raise ValueError("y must be >= 0")
+
+    def area(self):
+        """
+        method to return the area of the rectangle
+        """
+        return self.__width * self.__height
