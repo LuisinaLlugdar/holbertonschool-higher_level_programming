@@ -140,10 +140,10 @@ class Rectangle(Base):
         """
         method that prints in stdout the rectangle with the character #
         """
-        for a in range(self.y):
+        for a in range(self.__y):
             print()
         for i in range(self.__height):
-            for b in range(self.x):
+            for b in range(self.__x):
                 print(" ", end='')
             for j in range(self.__width):
                 print("#", end='')
@@ -157,20 +157,34 @@ class Rectangle(Base):
                                                       self.width, self.height)
         return msg
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """
         method that assigns an argument (from *args) to each attribute
 
         Args:
-            args: list of arguments
+            args: list of arguments, all ints
+            kwargs: assigns a key/value argument to attributes
         """
-        if len(args) >= 1:
-            self.id = args[0]
-        if len(args) == 2:
-            self.width = args[1]
-        if len(args) == 3:
-            self.height = args[2]
-        if len(args) == 4:
-            self.x = args[3]
-        if len(args) == 5:
-            self.y = args[4]
+        if args:
+            if len(args) >= 1:
+                self.id = args[0]
+            if len(args) == 2:
+                self.__width = args[1]
+            if len(args) == 3:
+                self.__height = args[2]
+            if len(args) == 4:
+                self.__x = args[3]
+            if len(args) == 5:
+                self.__y = args[4]
+        else:
+            for k, v in kwargs.items():
+                if k == "id":
+                    self.id = v
+                if k == "width":
+                    self.__width = v
+                if k == "height":
+                    self.__height = v
+                if k == "x":
+                    self.__x = v
+                if k == "y":
+                    self.__y = v
