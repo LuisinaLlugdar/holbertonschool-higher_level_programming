@@ -101,5 +101,10 @@ class TestRectangleClass(unittest.TestCase):
         r9.update(id=10, width=20, x=30, height=40, y=50)
         self.assertEqual(r9.__str__(), "[Rectangle] (10) 30/50 - 20/40")
 
+    def test_to_dictionary(self):
+        r10 = Rectangle(1, 2, 3, 4, 5)
+        representation = {'x': 3, 'y': 4, 'id': 5, 'height': 2, 'width': 1}
+        self.assertEqual(r10.to_dictionary(), representation)
+
     if __name__ == '__main__':
         unittest.main()
