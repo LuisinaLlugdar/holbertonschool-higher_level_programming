@@ -67,5 +67,33 @@ class TestSquareClass(unittest.TestCase):
         s7 = Square(1, 2, 3, 4)
         self.assertEqual(s7.__str__(), "[Square] (4) 2/3 - 1")
 
+    def test_update_args(self):
+        s8 = Square(1, 2, 3, 4)
+        s8.update(89)
+        self.assertEqual(s8.__str__(), "[Square] (89) 2/3 - 1")
+
+        s8.update(89, 12)
+        self.assertEqual(s8.__str__(), "[Square] (89) 2/3 - 12")
+
+        s8.update(89, 12, 13)
+        self.assertEqual(s8.__str__(), "[Square] (89) 13/3 - 12")
+
+        s8.update(89, 12, 13, 14)
+        self.assertEqual(s8.__str__(), "[Square] (89) 13/14 - 12")
+
+    def test_update_kwargs(self):
+        s9 = Square(1, 2, 3, 4)
+        s9.update(id=10)
+        self.assertEqual(s9.__str__(), "[Square] (10) 2/3 - 1")
+
+        s9.update(id=10, size=20)
+        self.assertEqual(s9.__str__(), "[Square] (10) 2/3 - 20")
+
+        s9.update(id=10, size=20, x=30)
+        self.assertEqual(s9.__str__(), "[Square] (10) 30/3 - 20")
+
+        s9.update(id=10, size=20, x=30,  y=50)
+        self.assertEqual(s9.__str__(), "[Square] (10) 30/50 - 20")
+
     if __name__ == '__main__':
         unittest.main()
