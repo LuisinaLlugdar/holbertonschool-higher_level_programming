@@ -62,3 +62,17 @@ class Base:
 
         with open(filename, mode="w", encoding="UTF-8") as file:
             file.write(json_string)
+
+    @staticmethod
+    def from_json_string(json_string):
+        """
+        static method that returns the list of the JSON
+        string representation json_string
+
+        Args:
+            json_string: the json str to be represented as a list
+        """
+        if json_string is None or json_string == "":
+            return []
+        else:
+            return json.loads(json_string)
