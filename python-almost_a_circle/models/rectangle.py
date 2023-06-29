@@ -159,7 +159,8 @@ class Rectangle(Base):
 
     def update(self, *args, **kwargs):
         """
-        method that assigns an argument (from *args) to each attribute
+        method that assigns an argument (from *args or **kwargs)
+        to each attribute
 
         Args:
             args: list of arguments, all ints
