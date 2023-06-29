@@ -23,6 +23,11 @@ class Square(Rectangle):
             y
             id
         they must me inherited from Rectangle
+
+        Methods:
+            area: returns the area of the object Square
+            display: prints in stdo the square using '#'
+            update: uses *args and *kwargs
         """
         super().__init__(size, size, x, y, id)
 

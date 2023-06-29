@@ -34,7 +34,8 @@ class Rectangle(Base):
         Methods:
             area: returns the area of the object rectangle
             display: prints in stdo the rectangle using '#'
-            update: uses *args
+            update: uses *args and *kwargs
+            to_dictionary: returns the dict representation of a rectangle
         """
         super().__init__(id)
         self.width = width
@@ -189,3 +190,17 @@ class Rectangle(Base):
                     self.__x = v
                 if k == "y":
                     self.__y = v
+
+    def to_dictionary(self):
+        """
+        Method that returns the dictionary representation of a Rectangle,
+        containing all its attributes in a specific order:
+        id, width, height, x, y
+        """
+        dict_rep = {}
+        dict_rep["x"] = self.x
+        dict_rep["y"] = self.y
+        dict_rep["id"] = self.id
+        dict_rep["height"] = self.height
+        dict_rep["width"] = self.width
+        return dict_rep
