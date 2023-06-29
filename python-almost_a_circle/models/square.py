@@ -28,6 +28,7 @@ class Square(Rectangle):
             area: returns the area of the object Square
             display: prints in stdo the square using '#'
             update: uses *args and *kwargs
+            to_dictionary: returns a dict representation of the square
         """
         super().__init__(size, size, x, y, id)
 
@@ -85,3 +86,16 @@ class Square(Rectangle):
                     self.x = v
                 if k == "y":
                     self.y = v
+
+    def to_dictionary(self):
+        """
+        Method that returns the dictionary representation of a square,
+        containing all its attributes in a specific order:
+        id, x, size, y
+        """
+        dict_rep = {}
+        dict_rep["id"] = self.id
+        dict_rep["x"] = self.x
+        dict_rep["size"] = self.size
+        dict_rep["y"] = self.y
+        return dict_rep
